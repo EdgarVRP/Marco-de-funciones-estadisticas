@@ -221,15 +221,36 @@ public class VentanaPrincipal {
 			public void actionPerformed(ActionEvent e) {
 				SeleccionUsuario = Integer.parseInt(textField.getText());
 
-				if(SeleccionUsuario>10&&SeleccionUsuario<14) {
+				if(SeleccionUsuario>10) {
 					textField.setEnabled(false);
 					btnNewButton.setEnabled(false);
 					btnNewButton_2.setEnabled(true);
 				}else {
-					textField.setEnabled(false);
-					btnNewButton.setEnabled(false);
-					textField_1.setEnabled(true);
-					btnNewButton_1.setEnabled(true);
+					if(SeleccionUsuario!=6||SeleccionUsuario!=9||SeleccionUsuario!=10) {
+						textField_1.setText("1");
+						NumConjuntos=1;
+						textField.setEnabled(false);
+						btnNewButton.setEnabled(false);
+						textField_2.setEnabled(true);
+						btnNewButton_1_1.setEnabled(true);
+					}
+					if(SeleccionUsuario==10) {
+						textField_1.setText("4");
+						NumConjuntos=4;
+						textField.setEnabled(false);
+						btnNewButton.setEnabled(false);
+						textField_2.setEnabled(true);
+						btnNewButton_1_1.setEnabled(true);
+					}
+					if(SeleccionUsuario==6||SeleccionUsuario==9){
+						textField_1.setText("2");
+						NumConjuntos=2;
+						textField.setEnabled(false);
+						btnNewButton.setEnabled(false);
+						textField_2.setEnabled(true);
+						btnNewButton_1_1.setEnabled(true);
+					}
+					
 				}
 				
 			}
@@ -252,7 +273,6 @@ public class VentanaPrincipal {
 				btnNewButton_1_1.setEnabled(false);
 				textField_3.setEnabled(true);
 				btnNewButton_1_1_1.setEnabled(true);
-				
 				conjunto1=new double[NumerosTotales];
 				conjunto2=new double[NumerosTotales];
 				conjunto3=new double[NumerosTotales];
@@ -376,7 +396,7 @@ public class VentanaPrincipal {
 				case 9: //Correlacion
 					DistribucionT Correlacion=new DistribucionT(conjunto1,conjunto2,0);
 					Correlacion.Correlacion(conjunto1,conjunto2);
-					
+					lblNewLabel_6.setText("La Correlacion es: "+String.valueOf(Correlacion.Cor));
 					break;
 				case 10: //Regresion Multifactorial
 					double Wk=Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor de prediccion Wk "));

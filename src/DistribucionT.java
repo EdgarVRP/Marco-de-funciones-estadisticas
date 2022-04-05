@@ -1,5 +1,5 @@
 
-public class DistribucionT {
+public class DistribucionT extends OperacionesBasicas{
 	public double dof = 0, x1 = 0, x2 = 1;
 	public int NumSeg = 0;
 	double DistribucionT[], DBX[], DBY[];
@@ -102,39 +102,9 @@ public class DistribucionT {
 			ErrorBool = true;
 		}
 	}
-
-	// Reuso Programa PSP1
-	public double MediaAritmetica(double Numeros[]) {
-		double Media = 0;
-		double Num[] = Numeros;
-		int Total = Num.length;
-		for (int M = 0; M < Total; M++) {
-			Media = Num[M] + Media;
-		}
-		Media = Media / Total;
-		return Media;
-	}
-
 	public void PrediccionY(double tBeta0, double tBeta1, double Xk) {
 		Yk = tBeta0 + (tBeta1 * Xk);
 	}
-
-	public double Sumatoria(double Resultado0[]) {
-		double SUM = 0;
-		for (int M = 0; M < Resultado0.length; M++) {
-			SUM = Resultado0[M] + SUM;
-		}
-		return SUM;
-	}
-
-	public double SumatoriaProducto(double Resultado0[], double Resultado1[]) {
-		double SUMSUM = 0;
-		for (int M = 0; M < Resultado0.length; M++) {
-			SUMSUM = (Resultado0[M] * Resultado1[M]) + SUMSUM;
-		}
-		return SUMSUM;
-	}
-
 	public void RegresionLineal(double tDBX[], double tDBY[]) {
 		double TDBX[] = tDBX, TDBY[] = tDBY;
 		SUMX = Sumatoria(TDBX);

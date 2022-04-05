@@ -1,5 +1,5 @@
 
-public class RegresionMultiple {
+public class RegresionMultiple extends OperacionesBasicas{
 	public double dof = 0;
 	double x1=0,x2=1;
 	public int NumSeg = 0;
@@ -62,6 +62,7 @@ public class RegresionMultiple {
 		MatrizGauss[3][3] = SumatoriaProducto(y, y);
 		r[3] = SumatoriaProducto(y, z);
 	}
+	/*
 	//ok
 	public double Sumatoria(double Resultado0[]) {
 		double SUM = 0;
@@ -79,6 +80,7 @@ public class RegresionMultiple {
 		return SUMSUM;
 	}
 	//ok
+	 */
 	public void Gauss() {
 		int n = 4, i = 0, j = 0, s = 0;
 		double d = 0;
@@ -250,7 +252,7 @@ public class RegresionMultiple {
 	}
 
 	
-
+/*
 	// Reuso Programa PSP1
 	public double MediaAritmetica(double Numeros[]) {
 		double Media = 0;
@@ -262,6 +264,7 @@ public class RegresionMultiple {
 		Media = Media / Total;
 		return Media;
 	}
+	*/
 	public void PrediccionY() {
 		Zk = Betas[0]+Betas[1]*Wk+Betas[2]*Xk+Betas[3]*Yk;
 	}
